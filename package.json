@@ -1,0 +1,40 @@
+{
+  "name": "application",
+  "version": "1.0.0",
+  "description": "André's React Application",
+  "main": "server.js",
+  "scripts": {
+    "backend": "nodemon server.js",
+    "frontend": "npm start --prefix frontend",
+    "dev": "concurrently \"npm run backend\" \"npm run frontend\"",
+    "start": "node server.js",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend"
+  },
+  "keywords": [
+    "MERN",
+    "MongoGB",
+    "Express",
+    "React.js",
+    "Node.js",
+    "Fullstack"
+  ],
+  "author": "André Ribeiro",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "moment": "^2.29.1",
+    "mongoose": "^5.13.2",
+    "react-moment": "^1.1.1",
+    "slug": "^5.1.0"
+  },
+  "devDependencies": {
+    "concurrently": "^6.2.0",
+    "nodemon": "^2.0.12"
+  },
+  "engines": {
+    "node": "14.x"
+  }
+}

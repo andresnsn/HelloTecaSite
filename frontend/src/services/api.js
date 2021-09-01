@@ -14,7 +14,7 @@ export default api
 
 export const deleteItem = (slug) => {
     axios
-    .delete(`/api/portfolio/${slug}`, {headers: {'Authorization': `Bearer ${accessToken}`}})
+    .delete(`/api/books/${slug}`, {headers: {'Authorization': `Bearer ${accessToken}`}})
     .then(res => {
         console.log("Resultado: ", res)
         return res
@@ -26,7 +26,7 @@ export const deleteItem = (slug) => {
 
 export const editItem = (slug, {title, description, longDescription, image, technologies}) => {
     axios
-    .patch(`/api/portfolio/${slug}`, {
+    .patch(`/api/books/${slug}`, {
         title, description, longDescription, image, technologies
     }, {headers: {'Authorization': `Bearer ${accessToken}`}}).then(res => {
         console.log("Alterado com sucesso: ",res)
@@ -36,13 +36,11 @@ export const editItem = (slug, {title, description, longDescription, image, tech
             console.log("Erro: ",e)
             return e
         })
-    
-
 }
 
 export const addItem = ({title, description, longDescription, image, technologies}) => {
     axios
-    .post(`/api/portfolio/`, {
+    .post(`/api/books/`, {
         title, description, longDescription, image, technologies
     }, {headers: {'Authorization': `Bearer ${accessToken}`}}).then(res => {
         console.log("Adicionado com sucesso: ",res)
@@ -52,5 +50,4 @@ export const addItem = ({title, description, longDescription, image, technologie
             console.log("Erro: ",e)
             return e
         })
-     
 }

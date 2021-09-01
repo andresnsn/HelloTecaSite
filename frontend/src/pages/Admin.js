@@ -1,6 +1,6 @@
 import React from 'react'
 import {Jumbotron, Tab, Tabs, Container} from 'react-bootstrap'
-import PortfolioList from '../components/admin/PortfolioList'
+import BookList from '../components/admin/BookList'
 import WelcomeTab from '../components/admin/WelcomeTab'
 import { Redirect } from 'react-router-dom'
 import Userfront from '@userfront/react'
@@ -31,7 +31,7 @@ const Admin = ({location}) => {
     if (!isAdmin) {
         return(
             <Redirect to={{
-                pathname: '/portfolio'
+                pathname: '/book'
             }} />
         )
 
@@ -46,16 +46,16 @@ const Admin = ({location}) => {
     return(
     <Container fluid>
         <Jumbotron>
-            <h1>Admin Panel</h1>
+            <h1>Painel administrativo</h1>
         </Jumbotron>
         <Tabs transition={false} defaultActiveKey="home" id="uncontrolled-tab-example" className="mb-3">
             <Tab eventKey="home" title="Home">
                 <WelcomeTab/>
             </Tab>
-            <Tab eventKey="portfolio" title="Portfolio">
-                <PortfolioList/>
+            <Tab eventKey="book" title="Livros">
+                <BookList/>
             </Tab>
-            <Tab eventKey="user" title="User">
+            <Tab eventKey="user" title="Usuários">
                 <p>User</p>
                 <p>{access}</p>
                 <p>{user}</p>

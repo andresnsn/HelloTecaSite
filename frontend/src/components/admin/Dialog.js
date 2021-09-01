@@ -24,7 +24,7 @@ const Dialog = ({show, setShow, currentAction, children, slug}) => {
             {children}
         </Modal.Body>
         <Modal.Footer>
-            <Button variant="secondary" onClick={() => setShow(false)}>Close</Button>{' '}
+            <Button variant="secondary" onClick={() => setShow(false)}>Fechar</Button>{' '}
             <Button variant={currentAction.btnVariant} onClick={() => handleAction()}>{currentAction.btnLabel}</Button>{' '}
         </Modal.Footer>
     </Modal>

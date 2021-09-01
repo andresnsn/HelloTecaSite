@@ -39,7 +39,7 @@ router.get('/:slug', async (req, res) => {
 })
 //Create
 router.post('/', auth, async (req, res) => {
-    const portfolio = new Portfolio({
+    const book = new Book({
         title: req.body.title,
         description: req.body.description,
         longDescription: req.body.longDescription,
@@ -47,7 +47,7 @@ router.post('/', auth, async (req, res) => {
     })
 
     try{
-        const savedBook = await Book.save()
+        const savedBook = await book.save()
         res.json({
             success: true,
             data: savedBook

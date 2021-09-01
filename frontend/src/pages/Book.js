@@ -2,16 +2,16 @@ import React from 'react'
 import styled from 'styled-components'
 import Card from '../components/Card'
 import { useApi } from '../hooks/useApi'
-import PortfolioDetail from '../components/PortfolioDetail'
+import PortfolioDetail from '../components/BookDetail'
 import {useLocation} from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { pageAnimation } from '../animation'
 import ScrollTop from '../components/ScrollTop'
 
-const Portfolio = () => {
+const Book = () => {
     const location = useLocation()
     const slug = location.pathname.split('/')[2]
-    const { data } = useApi('/portfolio')
+    const { data } = useApi('/books')
 
     return(
         <PortfolioList
@@ -47,4 +47,4 @@ const CardList = styled.div`
     grid-row-gap: 5rem;
 `
 
-export default Portfolio
+export default Book

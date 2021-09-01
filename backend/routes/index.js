@@ -2,7 +2,7 @@ const router = require('express').Router()
 
 require('../db/mongoConnection')
 
-const book = require('./book')
+const books = require('./book')
 
 router.get('/', (req, res) => {
     res.json({
@@ -11,6 +11,6 @@ router.get('/', (req, res) => {
     })
 })
 
-router.use('/book', book)
+router.use('/books', books)
 
 module.exports = router

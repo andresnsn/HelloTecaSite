@@ -5,7 +5,7 @@ import ContactForm from '../components/ContactForm'
 import { motion } from 'framer-motion'
 import { pageAnimation } from '../animation'
 
-const ContactMe = () => {
+const ContactUs = () => {
     return(
         <ContactStyled
             exit='exit'
@@ -42,4 +42,4 @@ const Areas = styled.div`
 `
 
 
-export default ContactMe
+export default ContactUs

@@ -7,7 +7,7 @@ const Card = ({project}) => {
     return(
         
             <StyledCard>
-                <Link to={`/portfolio/${project.slug}`}>
+                <Link to={`/books/${project.slug}`}>
                     <Content>
                         <Image src={project.image}/>
                         <Info>

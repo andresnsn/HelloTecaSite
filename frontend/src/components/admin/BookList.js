@@ -2,47 +2,45 @@ import React, { useState } from 'react'
 import { Table, Button, Image, Container } from 'react-bootstrap'
 import styled from 'styled-components'
 import { useApi } from '../../hooks/useApi'
-import moment from 'moment'
 import Dialog from './Dialog'
-import PortfolioForm from './PortfolioForm'
+import BookForm from './BookForm'
 import { deleteItem, editItem, addItem } from '../../services/api'
 
-const PortfolioList = () => {
+const BookList = () => {
     const handleDel = (slug) => {
         deleteItem(slug)
     }
     const handleAdd = (slug, data) => {
-        addPortfolioItem(data)
+        addBook(data)
     }
     const handleEdit = (slug, data) => {
-        editPortfolioItem(slug, data)
+        editBook(slug, data)
     }
     const[title, setTitle] = useState()
     const [shortDescription, setShortDescription] = useState()
     const [longDescription, setLongDescription] = useState()
     const [image, setImage] = useState()
     const [slug, setSlug] = useState()
-    const [tech, setTech] = useState()
     const [action] = useState({
         del: {
-            header: 'Confirm delete?',
+            header: 'Confirma a exclusão?',
             btnVariant: 'danger',
             btnLabel: 'Confirm',
             showBody: true,
-            body: 'Are you sure you want to delete?',
+            body: 'Você tem certeza que deseja deletar?',
             callback: handleDel
         },
         edit: {
-            header: 'Edit portfolio',
+            header: 'Editar livro',
             btnVariant: 'primary',
-            btnLabel: 'Save',
+            btnLabel: 'Salvar',
             showBody: false,
             callback: handleEdit
         },
         add: {
-            header: 'Add new portfolio',
+            header: 'Adicionar novo livro',
             btnVariant: 'primary',
-            btnLabel: 'Save',
+            btnLabel: 'Salvar',
             showBody: false,
             callback: handleAdd
         }
@@ -54,60 +52,50 @@ const PortfolioList = () => {
         body: ''
     })
     const [show, setShow] = useState(false)
-    const { data } = useApi('/portfolio')
-    const handleShow = (portfolio, actn) => {
+    const { data } = useApi('/books')
+    const handleShow = (book, actn) => {
         setCurrentAction(actn)
         setShow(true)
-        setTitle(portfolio?.title || '')
-        setShortDescription(portfolio?.description || '')
-        setLongDescription(portfolio?.longDescription || '')
-        setImage(portfolio?.image || '')
-        setSlug(portfolio?.slug || '')
-        setTech(portfolio?.technologies || [])
+        setTitle(book?.title || '')
+        setShortDescription(book?.description || '')
+        setLongDescription(book?.longDescription || '')
+        setImage(book?.image || '')
+        setSlug(book?.slug || '')
     }
 
-    const addPortfolioItem = (data) => {
-        const tech = data.tech.map(i => {
-            delete i._id
-            return i
-        })
-        const newPortfolioItem = {
+    const addBook = (data) => {
+
+        const newBookItem = {
             title: data.title,
             description: data.shortDescription,
             longDescription: data.longDescription,
             image: data.image,
-            technologies: tech
         }
 
-        addItem(newPortfolioItem)
+        addItem(newBookItem)
     }
 
-    const editPortfolioItem = (slug, data) => {
-        const tech = data.tech.map(i => {
-            delete i._id
-            return i
-        })
-        const editedPortfolioItem = {
+    const editBook = (slug, data) => {
+
+        const editedBookItem = {
             title: data.title,
             description: data.shortDescription,
             longDescription: data.longDescription,
             image: data.image,
-            technologies: tech
         }
     
-        editItem(slug, editedPortfolioItem)
+        editItem(slug, editedBookItem)
     }
 
     return (
         <Container>
-             <AddNewButton variant="primary" size="lg" onClick={() => handleShow(null, action.add)}>Add new</AddNewButton>{' '}
+             <AddNewButton variant="primary" size="lg" onClick={() => handleShow(null, action.add)}>Adicionar</AddNewButton>{' '}
             <Table striped bordered hover variant="dark">
                 <thead>
                     <tr>
-                    <th>Image</th>
-                    <th>Title</th>
-                    <th>Date</th>
-                    <th>Actions</th>
+                    <th>Capa</th>
+                    <th>Título</th>
+                    <th>Ações</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -116,10 +104,9 @@ const PortfolioList = () => {
                             <tr key={item.slug}>
                             <td><Logo src={item.image} thumbnail /></td>
                             <td>{item.title}</td>
-                            <td>{moment(item.createdAt).format('MMM-YYYY')}</td>
                             <td>
-                                <Button variant="info" onClick={() => handleShow(item, action.edit)}>Edit</Button>
-                                <Button variant="danger" onClick={() => handleShow(item, action.del)}>Delete</Button>
+                                <Button variant="info" onClick={() => handleShow(item, action.edit)}>Editar</Button>
+                                <Button variant="danger" onClick={() => handleShow(item, action.del)}>Deletar</Button>
                             </td>
                         </tr>
                         )
@@ -129,13 +116,12 @@ const PortfolioList = () => {
             <Dialog show={show} setShow={setShow} currentAction={currentAction} slug={slug}>
                     {currentAction.showBody && currentAction.body}
                     {!currentAction.showBody && (
-                        <PortfolioForm 
+                        <BookForm 
                         title={title} setTitle={setTitle} 
                         shortDescription={shortDescription} setShortDescription={setShortDescription}
                         longDescription={longDescription} setLongDescription={setLongDescription}
                         image={image} setImage={setImage}
                         slug={slug}
-                        tech={tech} setTech={setTech}
                         />
                     )}
             </Dialog>
@@ -151,4 +137,4 @@ const AddNewButton = styled(Button)`
     margin-bottom: 1rem;
 `
 
-export default PortfolioList
+export default BookList

@@ -5,8 +5,8 @@ import GlobalStyle from './components/GlobalStyle';
 import { Route, Switch, useLocation } from 'react-router-dom'
 //Components
 import AboutUs from './pages/AboutUs'
-import Portfolio from './pages/Portfolio'
-import ContactMe from './pages/ContactMe'
+import Book from './pages/Book'
+import ContactMe from './pages/ContactUs'
 import Nav from './components/Nav'
 //Icons
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -25,7 +25,7 @@ function App() {
       <GlobalStyle/>
       {location.pathname !== '/admin' && <Nav/>}
       <Switch>
-        <Route path = {['/portfolio:id', '/portfolio']} component={Portfolio}/>
+        <Route path = {['/book:id', '/book']} component={Book}/>
         <Route path = "/contact" component={ContactMe}/>
         <Route path = '/admin' component={Admin}/>
         <Route path = '/signup' component={SignupForm}/>

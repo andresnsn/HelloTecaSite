@@ -9,7 +9,7 @@ Userfront.init("jb7dwvn6")
 const Nav = () => {
     const menuOptions = {
         about: 'Sobre',
-        portfolio: 'Meus livros',
+        books: 'Meus livros',
         contact: 'Contate-nos'
     }
     return(
@@ -17,7 +17,7 @@ const Nav = () => {
             <h1><Link to = '/'>HelloTeca</Link></h1>
             <ul>
                 <li><Link to='/'>{menuOptions.about}</Link></li>
-                <li><Link to = '/portfolio'>{menuOptions.portfolio}</Link></li>
+                <li><Link to = '/books'>{menuOptions.books}</Link></li>
                 <li><Link to = '/contact'>{menuOptions.contact}</Link></li>
                 {   
                     !Userfront.accessToken() && (

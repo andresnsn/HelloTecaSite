@@ -29,7 +29,7 @@ const PortfolioForm = ({title, setTitle, shortDescription, setShortDescription,
         <Container>
             <Form>
                 <Form.Group>
-                    <Form.Label>Title</Form.Label>
+                    <Form.Label>Título</Form.Label>
                     <Form.Control 
                         type="text"
                         value={title}
@@ -37,7 +37,7 @@ const PortfolioForm = ({title, setTitle, shortDescription, setShortDescription,
                     />
                 </Form.Group>
                 <Form.Group>
-                    <Form.Label>Short Description</Form.Label>
+                    <Form.Label>Descrição curta</Form.Label>
                     <Form.Control 
                     type="text"
                     value={shortDescription}
@@ -45,7 +45,7 @@ const PortfolioForm = ({title, setTitle, shortDescription, setShortDescription,
                     />
                 </Form.Group>
                 <Form.Group>
-                    <Form.Label>Long Description</Form.Label>
+                    <Form.Label>Descrição longa</Form.Label>
                     <Form.Control 
                         as="textarea" rows={5}
                         value={longDescription}
@@ -53,7 +53,7 @@ const PortfolioForm = ({title, setTitle, shortDescription, setShortDescription,
                     />
                 </Form.Group>
                 <Form.Group>
-                    <Form.Label>Image</Form.Label>
+                    <Form.Label>Imagem</Form.Label>
                     <Form.Control 
                         type="text"
                         value={image}
@@ -80,34 +80,6 @@ const PortfolioForm = ({title, setTitle, shortDescription, setShortDescription,
                     })
                 }
             </CardColumn>
-            <Form inline>
-                <FormRow>
-                    <Column xs="auto">
-                        <Form.Control 
-                        placeholder="Type: fab, fas"
-                        value={type}
-                        onChange={(e) => setType(e.target.value)}
-                        />
-                    </Column>
-                    <Column xs="auto">
-                        <Form.Control 
-                        placeholder="Icon: github, database"
-                        value={icon}
-                        onChange={(e) => setIcon(e.target.value)}
-                        />
-                    </Column>
-                    <Column xs="auto">
-                        <Form.Control 
-                        placeholder="Label: GitHub, MongoDB"
-                        value={label}
-                        onChange={(e) => setLabel(e.target.value)}
-                        />
-                    </Column>
-                    <Column xs="auto">
-                        <Button className="mb-2" onClick={handleAddItem}>Add</Button>
-                    </Column>
-                </FormRow>
-            </Form>
         </Container>
     )
 }

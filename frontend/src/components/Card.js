@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import Moment from 'react-moment'
 import { Link } from 'react-router-dom'
 
 const Card = ({project}) => {
@@ -12,7 +11,6 @@ const Card = ({project}) => {
                         <Image src={project.image}/>
                         <Info>
                             <h3>{project.title}</h3> 
-                            <h4><Moment format = 'MMMM/YYYY'>{project.createdAt}</Moment></h4>
                             <p>{project.description}</p>
                         </Info>
                     </Content>

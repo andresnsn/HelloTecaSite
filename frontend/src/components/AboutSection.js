@@ -5,6 +5,7 @@ import { About, Description, Image } from '../styles'
 import { motion } from 'framer-motion'
 import { titleAnimation, fade, photoAnimation, scrollReveal } from '../animation'
 import { useScroll } from '../hooks/useScroll'
+import Speech from 'react-speech'
 
 const AboutSection = () => {
     const[element, controls] = useScroll()
@@ -35,6 +36,9 @@ const AboutSection = () => {
                     <img src="https://image.winudf.com/v2/image/Y29tLmhhbm5hLmJvb2tzX3NjcmVlbl8wXzNsbTU2dzlt/screen-0.jpg?h=355&fakeurl=1&type=.jpg"></img>
                 </motion.div>
             </Image>
+            <Speech text="Leia livros, artigos, mangás e quadrinhos de pessoas do mundo todo!
+                    Tem uma ideia bacana? Aqui você pode criar, editar e publicar suas próprias histórias para
+                    que todos possam ver!" />
         </About>
     )
 }

@@ -41,9 +41,9 @@ const BookDetail = ({slug}) =>{
                     </Info>
                 </Stats>
                 <Description>
-                    <p>{data?.data?.longDescription}</p>
+                    <p>{data?.data?.content}</p>
                 </Description>
-                <img src="https://images.pexels.com/photos/97077/pexels-photo-97077.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"></img>
+                <img src="https://images.pexels.com/photos/1342460/pexels-photo-1342460.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"></img>
             </Detail>
         </CardShadow>
     )

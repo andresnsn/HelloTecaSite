@@ -18,7 +18,7 @@ const BookList = () => {
     }
     const[title, setTitle] = useState()
     const [shortDescription, setShortDescription] = useState()
-    const [longDescription, setLongDescription] = useState()
+    const [content, setcontent] = useState()
     const [image, setImage] = useState()
     const [slug, setSlug] = useState()
     const [action] = useState({
@@ -58,7 +58,7 @@ const BookList = () => {
         setShow(true)
         setTitle(book?.title || '')
         setShortDescription(book?.description || '')
-        setLongDescription(book?.longDescription || '')
+        setcontent(book?.content || '')
         setImage(book?.image || '')
         setSlug(book?.slug || '')
     }
@@ -68,7 +68,7 @@ const BookList = () => {
         const newBookItem = {
             title: data.title,
             description: data.shortDescription,
-            longDescription: data.longDescription,
+            content: data.content,
             image: data.image,
         }
 
@@ -80,7 +80,7 @@ const BookList = () => {
         const editedBookItem = {
             title: data.title,
             description: data.shortDescription,
-            longDescription: data.longDescription,
+            content: data.content,
             image: data.image,
         }
     
@@ -119,7 +119,7 @@ const BookList = () => {
                         <BookForm 
                         title={title} setTitle={setTitle} 
                         shortDescription={shortDescription} setShortDescription={setShortDescription}
-                        longDescription={longDescription} setLongDescription={setLongDescription}
+                        content={content} setcontent={setcontent}
                         image={image} setImage={setImage}
                         slug={slug}
                         />

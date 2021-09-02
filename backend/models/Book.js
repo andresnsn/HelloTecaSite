@@ -22,7 +22,7 @@ const bookSchema = new Schema({
         type: String,
         required: true
     },
-    longDescription: {
+    content: {
         type: String
     },
 

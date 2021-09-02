@@ -42,7 +42,7 @@ router.post('/', auth, async (req, res) => {
     const book = new Book({
         title: req.body.title,
         description: req.body.description,
-        longDescription: req.body.longDescription,
+        content: req.body.content,
         image: req.body.image
     })
 
@@ -71,7 +71,7 @@ router.patch('/:slug', auth, async(req, res) => {
         {
             title: req.body.title,
             description: req.body.description,
-            longDescription: req.body.longDescription,
+            content: req.body.content,
             image: req.body.image
         })
         res.json({

@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
 const PortfolioForm = ({title, setTitle, shortDescription, setShortDescription, 
-    longDescription, setLongDescription, image, setImage, slug, tech, setTech}) => {
+    content, setcontent, image, setImage, slug, tech, setTech}) => {
         const [type, setType] = useState('')
         const [icon, setIcon] = useState('')
         const [label, setLabel] = useState('')
@@ -48,8 +48,8 @@ const PortfolioForm = ({title, setTitle, shortDescription, setShortDescription,
                     <Form.Label>Descrição longa</Form.Label>
                     <Form.Control 
                         as="textarea" rows={5}
-                        value={longDescription}
-                        onChange={(e)=>setLongDescription(e.target.value)}
+                        value={content}
+                        onChange={(e)=>setcontent(e.target.value)}
                     />
                 </Form.Group>
                 <Form.Group>

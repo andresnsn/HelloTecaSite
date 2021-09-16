@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import Card from '../components/Card'
 import { useApi } from '../hooks/useApi'
-import PortfolioDetail from '../components/BookDetail'
+import BookDetail from '../components/BookDetail'
 import {useLocation} from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { pageAnimation } from '../animation'
@@ -14,26 +14,26 @@ const Book = () => {
     const { data } = useApi('/books')
 
     return(
-        <PortfolioList
+        <BookList
             exit='exit'
             initial='hidden'
             animate='show'
             variants={pageAnimation}
         >
-            {slug && <PortfolioDetail slug={slug}/>}
+            {slug && <BookDetail slug={slug}/>}
             <CardList>
                 {data?.data?.map(project => {
                     return <Card key={project.slug} project = {project}/>
                 })}
             </CardList>
             <ScrollTop/>
-        </PortfolioList>
+        </BookList>
     )
 }
 
 
 
-const PortfolioList = styled(motion.div)`
+const BookList = styled(motion.div)`
     min-height: 90vh;
     overflow: hidden;
     padding: 5rem 10rem;

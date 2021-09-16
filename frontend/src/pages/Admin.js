@@ -25,6 +25,8 @@ const Admin = ({location}) => {
     const accessData = jwt_decode(Userfront.accessToken())
     const userData = jwt_decode(Userfront.idToken())
 
+
+
     const roles = accessData.authorization[projectId].roles
     const isAdmin = roles.includes('admin')
 
@@ -41,6 +43,7 @@ const Admin = ({location}) => {
 
     const access = JSON.stringify(accessData)
     const user = JSON.stringify(userData)
+
     
 
     return(

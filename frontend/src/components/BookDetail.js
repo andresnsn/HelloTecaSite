@@ -3,10 +3,13 @@ import styled from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useApi } from '../hooks/useApi'
 import {useHistory} from 'react-router-dom'
+import Speech from 'react-speech'
+
 
 const BookDetail = ({slug}) =>{
     const history = useHistory()
-    const {data} = useApi(`/books${slug}`)
+    const api = useApi(`/books/${slug}`)
+    const book = JSON.stringify(api.data?.data?.content)
 
     const exitDetailHandler = (click) => {
         const element = click.target
@@ -21,28 +24,16 @@ const BookDetail = ({slug}) =>{
             <Detail>
                 <Stats>
                     <div>
-                        <Title>Title</Title>
-                        <ShortDescription>
-                            <p>{data?.data?.description}</p>
-                        </ShortDescription>
+                        <Title>{api?.data?.data?.title}</Title>
+                        <Description>
+                            <p>{api?.data?.data?.description}</p>
+                        </Description>
                     </div>
-                    <Info>
-                        <h3>Technologies</h3>
-                        <Technologies>
-                            {data?.data?.technologies.map(tech => {
-                                return(
-                                    <Technology key={tech.icon}>
-                                        <FontAwesomeIcon icon = {[tech.iconType, tech.icon]} size="4x"/> {tech.label}
-                                    </Technology>
-                                )
-                            })}
-
-                        </Technologies>
-                    </Info>
+                    <Speech text={book} displayText="Iniciar" textAsButton="true" pause={true} resume={true} ></Speech>  
                 </Stats>
-                <Description>
-                    <p>{data?.data?.content}</p>
-                </Description>
+                <Content>
+                    <p>{api?.data?.data?.content}</p>
+                </Content>
                 <img src="https://images.pexels.com/photos/1342460/pexels-photo-1342460.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"></img>
             </Detail>
         </CardShadow>
@@ -75,37 +66,14 @@ const Title = styled.h2`
     color: #696969;
 `
 
-const Description = styled.div`
+const Content = styled.div`
     padding: 2rem 5rem;
     p{
         color: black;
     }
 `
 
-const ShortDescription = styled(Description)`
-    padding: 0;
-
-`
-
-const Technologies = styled.div`
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    padding-top: 1rem;
-    svg{
-        color: #416CD5
-    }
-`
-
-const Technology = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: #416CD5;
-`
-
-const Info = styled.div`
+const Description = styled.div`
     text-align: center;
     min-width: 300px;
     h3{
@@ -132,5 +100,20 @@ const CardShadow = styled.div`
         background: white;
     }
 `
+
+const styledButton = {
+    play: {
+        button: {
+            width: '28',
+            height: '28',
+            cursor: 'pointer',
+            pointerEvents: 'none',
+            outline: 'none',
+            backgroundColor: 'yellow',
+            border: 'solid 1px rgba(255,255,255,1)',
+            borderRadius: 6
+        }
+    }
+}
 
 export default BookDetail

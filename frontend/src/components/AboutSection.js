@@ -5,7 +5,6 @@ import { About, Description, Image } from '../styles'
 import { motion } from 'framer-motion'
 import { titleAnimation, fade, photoAnimation, scrollReveal } from '../animation'
 import { useScroll } from '../hooks/useScroll'
-import Speech from 'react-speech'
 
 const AboutSection = () => {
     const[element, controls] = useScroll()
@@ -25,9 +24,9 @@ const AboutSection = () => {
             <Description>
                 <motion.h2 variants={titleAnimation}>HelloTeca</motion.h2>
                 <motion.h1 variants={titleAnimation}>Sua plataforma de streaming de livros</motion.h1>
-                <motion.p variants={fade}>Leia livros, artigos, mangás e quadrinhos de pessoas do mundo todo!
+                <motion.p variants={fade}>"Leia livros, artigos, mangás e quadrinhos de pessoas do mundo todo!
                     Tem uma ideia bacana? Aqui você pode criar, editar e publicar suas próprias histórias para
-                    que todos possam ver!
+                    que todos possam ver!" textAsButton="yes" displayText="Iniciar" pause="true" stop="true">
                 </motion.p>
                     <button onClick={redirectHandler}>Comece já!</button>
             </Description>
@@ -36,9 +35,7 @@ const AboutSection = () => {
                     <img src="https://image.winudf.com/v2/image/Y29tLmhhbm5hLmJvb2tzX3NjcmVlbl8wXzNsbTU2dzlt/screen-0.jpg?h=355&fakeurl=1&type=.jpg"></img>
                 </motion.div>
             </Image>
-            <Speech text="Leia livros, artigos, mangás e quadrinhos de pessoas do mundo todo!
-                    Tem uma ideia bacana? Aqui você pode criar, editar e publicar suas próprias histórias para
-                    que todos possam ver!" />
+            
         </About>
     )
 }

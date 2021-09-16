@@ -53,6 +53,7 @@ const BookList = () => {
     })
     const [show, setShow] = useState(false)
     const { data } = useApi('/books')
+
     const handleShow = (book, actn) => {
         setCurrentAction(actn)
         setShow(true)

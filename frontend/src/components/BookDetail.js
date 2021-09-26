@@ -33,8 +33,8 @@ const BookDetail = ({slug}) =>{
                 </Stats>
                 <Content>
                     <p>{api?.data?.data?.content}</p>
-                </Content>
-                <img src="https://images.pexels.com/photos/1342460/pexels-photo-1342460.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"></img>
+                </Content>0
+                <img src="https://image.winudf.com/v2/image/Y29tLmhhbm5hLmJvb2tzX3NjcmVlbl8wXzNsbTU2dzlt/screen-0.jpg?h=355&fakeurl=1&type=.jpg"></img>
             </Detail>
         </CardShadow>
     )

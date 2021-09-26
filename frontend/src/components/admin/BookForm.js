@@ -37,7 +37,7 @@ const PortfolioForm = ({title, setTitle, shortDescription, setShortDescription,
                     />
                 </Form.Group>
                 <Form.Group>
-                    <Form.Label>Descrição curta</Form.Label>
+                    <Form.Label>Sinopse</Form.Label>
                     <Form.Control 
                     type="text"
                     value={shortDescription}
@@ -45,7 +45,7 @@ const PortfolioForm = ({title, setTitle, shortDescription, setShortDescription,
                     />
                 </Form.Group>
                 <Form.Group>
-                    <Form.Label>Descrição longa</Form.Label>
+                    <Form.Label>História</Form.Label>
                     <Form.Control 
                         as="textarea" rows={5}
                         value={content}

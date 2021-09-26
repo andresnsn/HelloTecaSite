@@ -24,9 +24,9 @@ const AboutSection = () => {
             <Description>
                 <motion.h2 variants={titleAnimation}>HelloTeca</motion.h2>
                 <motion.h1 variants={titleAnimation}>Sua plataforma de streaming de livros</motion.h1>
-                <motion.p variants={fade}>"Leia livros, artigos, mangás e quadrinhos de pessoas do mundo todo!
+                <motion.p variants={fade}>Leia livros, artigos, mangás e quadrinhos de pessoas do mundo todo!
                     Tem uma ideia bacana? Aqui você pode criar, editar e publicar suas próprias histórias para
-                    que todos possam ver!" textAsButton="yes" displayText="Iniciar" pause="true" stop="true">
+                    que todos possam ver!
                 </motion.p>
                     <button onClick={redirectHandler}>Comece já!</button>
             </Description>

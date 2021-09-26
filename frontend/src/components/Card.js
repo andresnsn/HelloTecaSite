@@ -11,7 +11,6 @@ const Card = ({project}) => {
                         <Image src={project.image}/>
                         <Info>
                             <h3>{project.title}</h3> 
-                            <p>{project.description}</p>
                         </Info>
                     </Content>
                 </Link>
@@ -28,6 +27,7 @@ const StyledCard = styled.div`
     cursor: pointer;
     overflow: hidden;
     box-shadow: 0.01em 0.1em 1em 0.1em #fc3f93;
+    padding-bottom: 60px;
     a{
         text-decoration: none
     }
@@ -43,7 +43,7 @@ const Content = styled.div`
 
 const Image = styled.img`
     width: 100%;
-    height: 80%;
+    height: 100%;
 `
 
 const Info = styled.div`

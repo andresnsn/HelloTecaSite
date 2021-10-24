@@ -34,3 +34,8 @@ export const Image = styled.div`
         object-fit: cover;
     }
 `
+export const BookList = styled(motion.div)`
+    min-height: 90vh;
+    overflow: hidden;
+    padding: 5rem 10rem;
+`

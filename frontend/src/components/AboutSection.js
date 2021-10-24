@@ -1,11 +1,13 @@
 import React from 'react'
 
 import { useHistory } from 'react-router-dom'
-import { About, Description, Image } from '../styles'
+import { About, Description, BookList } from '../styles'
 import { motion } from 'framer-motion'
 import { titleAnimation, fade, photoAnimation, scrollReveal } from '../animation'
 import { useScroll } from '../hooks/useScroll'
 import styled from 'styled-components'
+import { pageAnimation } from '../animation'
+import HomeCard from '../components/HomeCard'
 
 const AboutSection = () => {
     const[element, controls] = useScroll()
@@ -22,11 +24,10 @@ const AboutSection = () => {
             initial='hidden'
             ref={element}
         >
-            <Image>
-                <motion.div variants={photoAnimation}>
-                    <img src="https://image.winudf.com/v2/image/Y29tLmhhbm5hLmJvb2tzX3NjcmVlbl8wXzNsbTU2dzlt/screen-0.jpg?h=355&fakeurl=1&type=.jpg"></img>
-                </motion.div>
-            </Image>
+            <CardList>
+                <HomeCard image="https://pm1.narvii.com/6710/a3ac0d786a05a80aedee88d2cd42121a65f52677_hq.jpg"></HomeCard>
+                <HomeCard image ="https://cdn.maioresemelhores.com/imagens/03-pessoas-normais-cke.jpg"></HomeCard>
+            </CardList>
             <Description>
                 
                 <StyledTitle>
@@ -43,10 +44,12 @@ const AboutSection = () => {
                         <motion.h1 variants={titleAnimation}>lugar</motion.h1>
                     </StyledSubtitle3>
                 </StyledGeneralTitle>
-                <motion.p vaIriants={fade}>Leia livros, artigos, mangás e quadrinhos de pessoas do mundo todo!
-                    Tem uma ideia bacana? Aqui você pode criar, editar e publicar suas próprias histórias para
-                    que todos possam ver!
-                </motion.p>
+                <StyledDescription>
+                    <motion.p vaIriants={fade}>Leia livros, artigos, mangás e quadrinhos de pessoas do mundo todo!
+                        Tem uma ideia bacana? Aqui você pode criar, editar e publicar suas próprias histórias para
+                        que todos possam ver!
+                    </motion.p>
+                </StyledDescription>
             </Description>
         </About>
         /*<button onClick={redirectHandler}>Comece já!</button>*/ 
@@ -88,6 +91,22 @@ export const StyledSubtitle3 = styled.div`
     h1{
         color: #FF4984;
         font-size: 56px;
+`
+
+export const StyledDescription = styled.div`
+    font-family: 'Roboto', sans-serif;
+
+    p{
+        color: white;
+    }
+`
+
+export const CardList = styled.div`
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-column-gap: 3rem;
+    grid-row-gap: 5rem;
 `
 
 export default AboutSection

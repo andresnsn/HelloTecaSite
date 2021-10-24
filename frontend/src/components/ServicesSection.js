@@ -67,6 +67,9 @@ const Services = styled(About)`
 
 const ServiceDescription = styled(Description)`
     flex: 2;
+    h2{
+        color: #FF4984;
+    }
 `
 
 const Cards = styled.div`

@@ -24,9 +24,6 @@ const Admin = ({location}) => {
 
     const accessData = jwt_decode(Userfront.accessToken())
     const userData = jwt_decode(Userfront.idToken())
-
-
-
     const roles = accessData.authorization[projectId].roles
     const isAdmin = roles.includes('admin')
 
@@ -57,11 +54,6 @@ const Admin = ({location}) => {
             </Tab>
             <Tab eventKey="book" title="Livros">
                 <BookList/>
-            </Tab>
-            <Tab eventKey="user" title="Usuários">
-                <p>User</p>
-                <p>{access}</p>
-                <p>{user}</p>
             </Tab>
         </Tabs>
     </Container>

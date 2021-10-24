@@ -8,6 +8,7 @@ Userfront.init("jb7dwvn6")
 
 const Nav = () => {
     const menuOptions = {
+        home: 'Home',
         about: 'Sobre',
         books: 'Meus livros',
         contact: 'Contate-nos'
@@ -16,14 +17,14 @@ const Nav = () => {
         <StyledNav>
             <h1><Link to = '/'>HelloTeca</Link></h1>
             <ul>
-                <li><Link to='/'>{menuOptions.about}</Link></li>
+                <li><Link to = '/'>{menuOptions.home}</Link></li>
+                <li><Link to ='/'>{menuOptions.about}</Link></li>
                 <li><Link to = '/books'>{menuOptions.books}</Link></li>
                 <li><Link to = '/contact'>{menuOptions.contact}</Link></li>
                 {   
                     !Userfront.accessToken() && (
                     <>
-                    <li><Link to = '/login'>Entrar</Link></li>
-                    <li><Link to = '/signup'>Cadastrar</Link></li>
+                    <StyledLoginButton><Link to = '/login'>Entrar</Link></StyledLoginButton>
                     </>
                     )
                 }
@@ -43,21 +44,41 @@ const StyledNav = styled.nav`
     justify-content: space-between;
     align-items: center;
     padding: 1rem 10rem;
-    background: black;
+    background: #1A243C;
     position: sticky;
     top: 0;
     z-index: 10;
+    
     ul {
         display: flex;
         list-style: none;
     }
     li {
-        padding-left: 5rem;
+        padding-left: 61px;
+        padding-right: 61px;
+        padding-top: 16px;
+        padding-bottom: 16px;
     }
     a {
-        color: white;
+        color: #FF4984;
         text-decoration: none;
+        font-family: 'Roboto', sans-serif;
+        font-size: 20px;
     }
+`
+
+const StyledLoginButton = styled.li`
+        border: 1px #FF4984;
+        background-color: #FF4984;
+        border-radius: 38px;
+        display: table;
+        //56h
+        //176w
+        a{
+            color: white;
+            font-size: 20px;
+            font-family: 'Roboto', sans-serif;
+        }
 `
 
 

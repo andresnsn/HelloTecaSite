@@ -14,7 +14,7 @@ const ContactUs = () => {
             variants={pageAnimation}
         >
             <Title>
-                <h2>Get in touch</h2>
+                <h2>Entre em contato</h2>
             </Title>
             <Areas>
                 <ContactForm/>

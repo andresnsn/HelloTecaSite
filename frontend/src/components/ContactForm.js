@@ -40,15 +40,15 @@ const ContactForm = () => {
     return(
         <Form onSubmit={contactMeHandler}>
             <Input>
-                <label>Name: </label>
+                <label>Nome: </label>
                 <input type ="text" value={name} onChange={(e) => setName(e.target.value)}/>
             </Input>
             <Input>
-                <label>Email: </label>
+                <label>E-mail: </label>
                 <input type="email" value={email} onChange={(e) => setEmail(e.target.value)}/>
             </Input>
             <Input>
-                <label>Message: </label> 
+                <label>Mensagem: </label> 
                 <textarea rows='5' value={message} onChange={(e) => setMessage(e.target.value)}/>
             </Input>
             <button type="submit">Submit</button>

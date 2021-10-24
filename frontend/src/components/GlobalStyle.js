@@ -8,7 +8,7 @@ const GlobalStyle = createGlobalStyle`
         box-sizing: border-box;
     }
     body{
-        background: #1b1b1b;
+        background: #1A243C;
         overflow-x: hidden;
         text-decoration: none;
     }

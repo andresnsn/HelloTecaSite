@@ -3,27 +3,29 @@ import styled from 'styled-components'
 import { faGithubSquare, faLinkedin, faYoutubeSquare, faTelegramPlane } from '@fortawesome/free-brands-svg-icons'
 import { faGraduationCap } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FaWhatsappSquare } from 'react-icons/fa'
 
 const SocialNetworkSection = () => {
     return(
         <Network>
-            <Social href="https://github.com/andresnsn" target="_blank">
+            <Social href="https://github.com/andresnsn/HelloTecaSite" target="_blank">
                 <FontAwesomeIcon icon={faGithubSquare} size='4x'/>
-                <h3>github.com/andresnsn</h3>
+                <h3>Github</h3>
             </Social>
-            <Social href="https://www.linkedin.com/in/andré-ribeiro-sn" target="_blank">
+            <Social href="https://www.linkedin.com" target="_blank">
                 <FontAwesomeIcon icon={faLinkedin} size='4x'/>
                 <h3>LinkedIn</h3>
             </Social>
-            <Social href="https://www.youtube.com/channel/UCTmU6QLFjaBR7fSNpDQ2w5w" target="_blank">
+            <Social href="https://youtu.be/h5Ok8zi2CNA" target="_blank">
                 <FontAwesomeIcon icon={faYoutubeSquare} size='4x'/>
                 <h3>Youtube</h3>
             </Social>
-            <Social href="https://www.udemy.com" target="_blank">
-                <FontAwesomeIcon icon={faGraduationCap} size='4x'/>
-                <h3>Udemy</h3>
+            <Social href="https://web.whatsapp.com" target="_blank">
+                <StyledDiv><FaWhatsappSquare size='72px'/></StyledDiv>
+                
+                <h3>WhatsApp</h3>
             </Social>
-            <Social href="https://t.me/joinchat/UMMRfkRH8YxhOWMx" target="_blank">
+            <Social href="https://web.telegram.org/z/" target="_blank">
                 <FontAwesomeIcon icon={faTelegramPlane} size='4x'/>
                 <h3>Telegram</h3>
             </Social>
@@ -52,6 +54,10 @@ const Social = styled.a`
         color: grey;
         margin: 2rem;
     }   
+`
+
+const StyledDiv = styled.div`
+    margin-left: -5px;
 `
 
 export default SocialNetworkSection

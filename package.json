@@ -27,6 +27,7 @@
     "jsonwebtoken": "^8.5.1",
     "moment": "^2.29.1",
     "mongoose": "^5.13.2",
+    "react-icons": "^4.2.0",
     "react-moment": "^1.1.1",
     "slug": "^5.1.0"
   },

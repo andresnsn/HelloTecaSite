@@ -4,48 +4,82 @@ import { Link } from 'react-router-dom'
 
 const HomeCard = ({image}) => {
     return(
-        
+        <div>
             <StyledCard>
-                    <Content>
-                        <Image src={image}/>
-                        <Info>
-                            <h3>Teste</h3> 
-                        </Info>
-                    </Content>
+                <Image src={image}/>
+                <Button>Ler agora</Button>
             </StyledCard>
+        </div>
     )
 }
 
+export const ImageDescription = styled.div`
+    font-family: 'Roboto', sans-serif;
+
+`
+
 const StyledCard = styled.div`
+    //z-index: 1;
     background-color: #1b1b1b;
-    min-height: 30vh;
+    //min-height: 30vh;
     border-color: #416CD5;
-    text-align: center;
     border-radius: 1.5rem;
     cursor: pointer;
     overflow: hidden;
     box-shadow: 0.01em 0.1em 1em 0.1em #fc3f93;
-    padding-bottom: 60px;
-    a{
+    width:100%;
+    height:100%;
+    display: flex;
+    position: relative;
+    //position: center;
+    /*a{
         text-decoration: none
+    }*/
+`
+
+const Image = styled.img`
+    width:100%;
+    height: 100%;
+    margin: auto;
+    display: block;
+
+`
+
+const Button = styled.button`
+    position: absolute;
+    top: 92.5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: #ff4984;
+    color: white;
+    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 25px;
+    text-align: center;
+    width: 90%;
+    &:hover{
+        background-color: pink;
     }
 `
 
 const Content = styled.div`
-    display: flex;
-    flex-direction: column;
+    //display: flex;
+    //flex-direction: column;
+    //justify-content: center;
+    max-width:100%;
+    max-height:100%;
     justify-content: space-around;
-    width: 100%;
-    height: 65vh;
 `
 
-const Image = styled.img`
-    width: 100%;
-    height: 100%;
-`
+
 
 const Info = styled.div`
-    text-align: left;
+    background-color: pink;
+    z-index: 2;
+    text-align: center;
     padding-left: 1rem;
     display: flex;
     flex-direction: column;
@@ -54,6 +88,10 @@ const Info = styled.div`
         padding-top: 2rem;
 
     }
+`
+
+const Teste = styled.div`
+
 `
 
 export default HomeCard

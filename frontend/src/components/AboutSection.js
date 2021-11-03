@@ -25,11 +25,11 @@ const AboutSection = () => {
             ref={element}
         >
             <CardList>
+                <HomeCard image="https://i.pinimg.com/originals/52/bf/5d/52bf5d93c7a84395e13ba8fd3f368802.jpg"></HomeCard>
                 <HomeCard image="https://pm1.narvii.com/6710/a3ac0d786a05a80aedee88d2cd42121a65f52677_hq.jpg"></HomeCard>
-                <HomeCard image ="https://cdn.maioresemelhores.com/imagens/03-pessoas-normais-cke.jpg"></HomeCard>
+                <HomeCard image="https://cdn.maioresemelhores.com/imagens/03-pessoas-normais-cke.jpg"></HomeCard>
             </CardList>
             <Description>
-                
                 <StyledTitle>
                     <motion.h2 variants={titleAnimation}>Leia</motion.h2>
                 </StyledTitle>
@@ -91,6 +91,7 @@ export const StyledSubtitle3 = styled.div`
     h1{
         color: #FF4984;
         font-size: 56px;
+    }
 `
 
 export const StyledDescription = styled.div`
@@ -102,11 +103,15 @@ export const StyledDescription = styled.div`
 `
 
 export const CardList = styled.div`
-
+    margin-right: 70px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    grid-column-gap: 3rem;
+    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+    flex: 1;
+    //repeat(auto-fit, minmax(300px, 1fr));
+    grid-column-gap: 2rem;
     grid-row-gap: 5rem;
 `
+
+
 
 export default AboutSection

@@ -11,7 +11,7 @@ export const About = styled(motion.div)`
 `
 
 export const Description = styled.div`
-    flex: 1;
+    flex: 0;
     padding-left: 5rem;
     z-index: 2;
     h2{

@@ -2,18 +2,65 @@ import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
-const HomeCard = ({image}) => {
+const HomeCard = ({image, redirect, name, heart, views}) => {
     return(
+
         <div>
-            <StyledCard>
-                <Image src={image}/>
-                <Button>Ler agora</Button>
-            </StyledCard>
+            <Link to={redirect}>
+                <StyledCard>
+                    <Image src={image}/>
+                    <Button>Ler agora</Button>
+                </StyledCard>
+
+            </Link>
+            <ImageTitle>{name}</ImageTitle>
+            <Rates>
+                
+                <Heart>
+                    <div>{heart}</div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="34.185" height="20.378" viewBox="0 0 34.185 20.378">
+                        <g id="olho" transform="translate(0 -98.725)">
+                            <path id="Caminho_7" data-name="Caminho 7" d="M17.093,98.725c-6.531,0-12.454,3.573-16.825,9.378a1.353,1.353,0,0,0,0,1.615c4.371,5.811,10.294,9.385,16.825,9.385s12.454-3.573,16.825-9.378a1.353,1.353,0,0,0,0-1.615C29.547,102.3,23.624,98.725,17.093,98.725Zm.469,17.364a7.19,7.19,0,1,1,6.706-6.706A7.194,7.194,0,0,1,17.561,116.089Zm-.217-3.315a3.872,3.872,0,1,1,3.615-3.615A3.865,3.865,0,0,1,17.344,112.774Z" transform="translate(0 0)" fill="#fff"/>
+                        </g>
+                    </svg>
+                </Heart>
+                
+                <Views>
+                    <div>{views}</div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="34.185" height="20.378" viewBox="0 0 34.185 20.378">
+                        <g id="olho" transform="translate(0 -98.725)">
+                            <path id="Caminho_7" data-name="Caminho 7" d="M17.093,98.725c-6.531,0-12.454,3.573-16.825,9.378a1.353,1.353,0,0,0,0,1.615c4.371,5.811,10.294,9.385,16.825,9.385s12.454-3.573,16.825-9.378a1.353,1.353,0,0,0,0-1.615C29.547,102.3,23.624,98.725,17.093,98.725Zm.469,17.364a7.19,7.19,0,1,1,6.706-6.706A7.194,7.194,0,0,1,17.561,116.089Zm-.217-3.315a3.872,3.872,0,1,1,3.615-3.615A3.865,3.865,0,0,1,17.344,112.774Z" transform="translate(0 0)" fill="#fff"/>
+                        </g>
+                    </svg>
+                </Views>
+            </Rates>
         </div>
+
+        
     )
 }
 
-export const ImageDescription = styled.div`
+
+
+export const Heart = styled.div`
+    margin-top: 1rem;
+    margin-left: 1rem;
+`
+
+export const Views = styled.div`
+    margin-top: 1rem;
+    margin-right: 1rem;
+`
+
+export const Rates = styled.div`
+    justify-content: space-between;
+    display: flex;
+`
+
+export const ImageTitle = styled.div`
+    margin-left: 1rem;
+    margin-top: 1.5rem;
+    font-weight: bold;
     font-family: 'Roboto', sans-serif;
 
 `

@@ -5,6 +5,8 @@ import WelcomeTab from '../components/admin/WelcomeTab'
 import { Redirect } from 'react-router-dom'
 import Userfront from '@userfront/react'
 import jwt_decode from 'jwt-decode'
+import styled from 'styled-components'
+
 
 Userfront.init("jb7dwvn6")
 
@@ -46,7 +48,7 @@ const Admin = ({location}) => {
     return(
     <Container fluid>
         <Jumbotron>
-            <h1>Painel administrativo</h1>
+            <StyledTitle>Painel administrativo</StyledTitle>
         </Jumbotron>
         <Tabs transition={false} defaultActiveKey="home" id="uncontrolled-tab-example" className="mb-3">
             <Tab eventKey="home" title="Home">
@@ -59,5 +61,12 @@ const Admin = ({location}) => {
     </Container>
     )
 }
+
+const StyledTitle = styled.h1`
+    color: white;
+`
+
+
+
 
 export default Admin

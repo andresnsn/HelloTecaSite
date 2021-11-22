@@ -1,12 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
-
+import Logo from './Logo.js'
 
 const Footer = () => {
     return(
         <StyledFooter>
-            <h2>HelloTeca</h2>
+            <Logo></Logo>
             <ul>
             <Link to='/contact'><li>Contato</li></Link>
             <Link to ='/'><li>Sobre</li></Link>

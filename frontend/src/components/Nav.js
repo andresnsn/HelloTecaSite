@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import { LogoutButton } from './auth/Authentication'
 import Userfront from '@userfront/react'
+import Logo from './Logo.js'
 
 Userfront.init("jb7dwvn6")
 
@@ -15,7 +16,7 @@ const Nav = () => {
     }
     return(
         <StyledNav>
-            <h1><Link to = '/'>HelloTeca</Link></h1>
+            <h1><Link to = '/'><Logo width="130" height="150"></Logo></Link></h1>
             <ul>
                 <li><Link to = '/'>{menuOptions.home}</Link></li>
                 <li><Link to ='/'>{menuOptions.about}</Link></li>
@@ -44,10 +45,11 @@ const StyledNav = styled.nav`
     justify-content: space-between;
     align-items: center;
     padding: 1rem 10rem;
+    padding-bottom: -20px;
     background: #1A243C;
     position: sticky;
     top: 0;
-    z-index: 10;
+    z-index: 5;
     
     ul {
         display: flex;

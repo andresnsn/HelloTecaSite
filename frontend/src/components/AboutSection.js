@@ -25,9 +25,9 @@ const AboutSection = () => {
             ref={element}
         >
             <CardList>
-                <HomeCard image="https://i.pinimg.com/originals/52/bf/5d/52bf5d93c7a84395e13ba8fd3f368802.jpg" redirect='/books/hamlet' name='Hamlet' heart='23' views='56'></HomeCard>
-                <HomeCard image="https://pm1.narvii.com/6710/a3ac0d786a05a80aedee88d2cd42121a65f52677_hq.jpg" redirect='/books/fate-unlimited-blade-works' name='Fate - Unlimited Blade Works' heart='18' views='22'></HomeCard>
-                <HomeCard image="https://cdn.maioresemelhores.com/imagens/03-pessoas-normais-cke.jpg" redirect='/books/pessoas-normais' name='Pessoas normais' heart='11' views='12'></HomeCard>
+                <HomeCard image="https://i.pinimg.com/originals/52/bf/5d/52bf5d93c7a84395e13ba8fd3f368802.jpg" redirect='/books/hamlet' name='Hamlet' heart='23  ' views='56  '></HomeCard>
+                <HomeCard image="https://pm1.narvii.com/6710/a3ac0d786a05a80aedee88d2cd42121a65f52677_hq.jpg" redirect='/books/fate-unlimited-blade-works' name='Fate - Unlimited Blade Works' heart='18  ' views='22  '></HomeCard>
+                <HomeCard image="https://cdn.maioresemelhores.com/imagens/03-pessoas-normais-cke.jpg" redirect='/books/pessoas-normais' name='Pessoas normais' heart='11  ' views='12  '></HomeCard>
             </CardList>
             <Description>
                 <StyledTitle>

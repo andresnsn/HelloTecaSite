@@ -3,7 +3,7 @@ import axios from 'axios'
 export const save = (data) => {
     const config = {
         method: 'post',
-        url: 'https://sheet.best/api/sheets/969f4d8b-7bc0-446a-95d1-aa9e76f0a0fb',
+        url: 'https://sheet.best/api/sheets/0ca145a8-6bb1-4fb0-9a24-db7b288849e6',
         header: { "Content-Type": "application/json" },
         data
     }
